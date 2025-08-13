@@ -102,7 +102,7 @@ export default function LoginScreen() {
             />
           </View>
           <Text style={styles.title}>Swifty Hub</Text>
-          <Text style={styles.subtitle}>Your coding journey, beautifully organized</Text>
+          {/* <Text style={styles.subtitle}>Your coding journey, beautifully organized</Text> */}
         </View>
 
         {error && (
