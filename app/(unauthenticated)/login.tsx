@@ -5,6 +5,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   ActivityIndicator,
+  Image,
 } from "react-native";
 import { useRouter } from "expo-router";
 import { OAuthWebView } from "../../components/OAuthWebView";
@@ -12,6 +13,7 @@ import { StatusBar } from "expo-status-bar";
 import { useAuthStore } from "../../stores/authStore";
 import { getRefreshToken } from "@/api/api";
 import { LinearGradient } from 'expo-linear-gradient';
+
 
 export default function LoginScreen() {
   const router = useRouter();
@@ -93,9 +95,13 @@ export default function LoginScreen() {
       <View style={styles.content}>
         <View style={styles.logoContainer}>
           <View style={styles.logoCircle}>
-            <Text style={styles.logo}>42</Text>
+            <Image 
+              source={require('../../assets/images/42_Logo.svg.png')} 
+              style={styles.logoImage}
+              resizeMode="contain"
+            />
           </View>
-          <Text style={styles.title}>DevHub</Text>
+          <Text style={styles.title}>Swifty Hub</Text>
           <Text style={styles.subtitle}>Your coding journey, beautifully organized</Text>
         </View>
 
@@ -169,10 +175,9 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: 'rgba(255, 255, 255, 0.3)',
   },
-  logo: {
-    fontSize: 48,
-    fontWeight: "bold",
-    color: "#ffffff",
+  logoImage: {
+    width: 60,
+    height: 60,
   },
   title: {
     fontSize: 42,

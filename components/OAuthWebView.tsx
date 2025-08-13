@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Modal, View, StyleSheet, SafeAreaView, TouchableOpacity, Text, ActivityIndicator } from 'react-native';
+import { Modal, View, StyleSheet, SafeAreaView, TouchableOpacity, Text, ActivityIndicator, Image } from 'react-native';
 import { WebView, WebViewNavigation } from 'react-native-webview';
 import { StatusBar } from 'expo-status-bar';
 import { Ionicons } from '@expo/vector-icons';
@@ -63,7 +63,14 @@ export function OAuthWebView({ url, redirectUri, visible, onClose, onSuccess }: 
           <TouchableOpacity onPress={onClose} style={styles.closeButton}>
             <Ionicons name="close" size={24} color="#667eea" />
           </TouchableOpacity>
-          <Text style={styles.headerTitle}>42 Authentication</Text>
+          <View style={styles.headerCenter}>
+            <Image 
+              source={require('../assets/images/42_Logo.svg.png')} 
+              style={styles.headerLogo}
+              resizeMode="contain"
+            />
+            <Text style={styles.headerTitle}>42 Authentication</Text>
+          </View>
           <View style={styles.rightPlaceholder} />
         </View>
         
@@ -123,6 +130,15 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: 'rgba(102, 126, 234, 0.1)',
     backgroundColor: '#f8fafc',
+  },
+  headerCenter: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  headerLogo: {
+    width: 24,
+    height: 24,
   },
   headerTitle: {
     fontSize: 18,
