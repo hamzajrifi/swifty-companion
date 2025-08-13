@@ -1,6 +1,7 @@
 # Swifty Companion
 
 A React Native mobile app for 42 school students to view profiles, projects, and progress using the 42 API.
+<img width="600" height="400" style="" alt="swifty-ui" src="https://github.com/user-attachments/assets/62047fc3-0271-4ae4-a916-227e5a1905e1" />
 
 ## Features
 
